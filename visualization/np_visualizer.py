@@ -4,7 +4,7 @@ import scipy
 import scipy.misc
 import imageio
 import torch
-
+from PIL import Image
 
 def make_numpy_grid(arrays_list, gridMaxWidth=2048,
                     imgMinSize=128,
@@ -47,6 +47,10 @@ def make_numpy_grid(arrays_list, gridMaxWidth=2048,
             xStart = c * imgSize
             yStart = r * imgHeight
 
+            #temp = Image.fromarray(np.uint8(arrays_list[indexImage]))
+            #print(type(temp))
+            #tmpImage = np.array(temp.resize((imgSize,imgHeight),resample=Image.NEAREST))
+            #print(imgSize,imgHeight)
             tmpImage = scipy.misc.imresize(
                 arrays_list[indexImage], (imgSize, imgHeight), interp=interpolation)
 
