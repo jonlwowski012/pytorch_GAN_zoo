@@ -1,0 +1,6 @@
+{
+    "pathDB": "./logos",
+    "config": {"miniBatchSize": 8,
+               "dimLatentVector": 64}
+
+}
